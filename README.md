@@ -25,4 +25,11 @@ Imagenes de la ejecución del proyecto:
 
 ## Link del proyecto desplegado en el VPS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+[http://179.197.84.73/t3_act8_eq11/]
+
+---
+
+## Credenciales para entrar con DummyJSON
+
+Usuario: `emilys`
+Contraseña: `emilyspass`
