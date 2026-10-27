@@ -1,4 +1,4 @@
-
+import Products from './Products';
 import { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
@@ -10,15 +10,7 @@ function Dashboard({ usuario, onLogout }) {
   function mostrarContenido() {
     switch (seccionActiva) {
       case 'productos':
-        return (
-          <>
-            <h1>Productos</h1>
-            <p>
-              Aquí construiremos la tabla de productos de DummyJSON.
-            </p>
-          </>
-        );
-
+        return <Products />;
       case 'perfil':
         return (
           <>
