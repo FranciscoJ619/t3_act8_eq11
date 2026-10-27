@@ -57,7 +57,7 @@ function Dashboard({ usuario, onLogout }) {
               </div>
               <div className="hero-media-wrapper">
                 <img
-                  src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&auto=format&fit=crop&q=80"
+                  src="https://www.shutterstock.com/shutterstock/photos/2585730557/display_1500/stock-photo-dnipro-ukraine-dec-playstation-game-dualsense-and-xbox-one-controller-on-dark-2585730557.jpg"
                   alt="Videojuegos"
                   className="hero-image"
                 />
@@ -110,7 +110,7 @@ function Dashboard({ usuario, onLogout }) {
                     platform: 'Nintendo Switch',
                     price: '$950 MXN',
                     rating: '4.9',
-                    img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&auto=format&fit=crop&q=60',
+                    img: 'https://www.gaming.net/wp-content/uploads/2023/05/The-Legend-of-Zelda-Tears-of-the-Kingdom.jpg',
                   },
                   {
                     id: 2,
@@ -126,7 +126,7 @@ function Dashboard({ usuario, onLogout }) {
                     platform: 'PlayStation 5',
                     price: '$690 MXN',
                     rating: '4.9',
-                    img: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=400&auto=format&fit=crop&q=60',
+                    img: 'https://image.api.playstation.com/vulcan/ap/rnd/202503/2016/9c66234099a4c6dc39a12c4101746f7dc9d87babbca5efe4.jpg',
                   },
                   {
                     id: 4,
@@ -195,7 +195,7 @@ function Dashboard({ usuario, onLogout }) {
                     title: 'Leyendas Pokémon: Arceus',
                     info: 'Nintendo Switch · Hace 3 h',
                     price: '$790 MXN',
-                    img: 'https://images.unsplash.com/photo-1563089145-599997674d42?w=200&auto=format&fit=crop&q=60',
+                    img: 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2025/02/pokemon-scarlet-and-violet-cover-art.jpg',
                   },
                 ].map((item) => (
                   <div key={item.id} className="recent-card">
