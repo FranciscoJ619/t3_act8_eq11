@@ -245,3 +245,380 @@
     padding: 22px;
   }
 }
+
+/* Layout general del contenido */
+.dashboard-content {
+  background-color: #f8fafc;
+  min-height: calc(100vh - 70px);
+}
+
+.home-dashboard-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 1.5rem 2rem;
+  max-width: 1350px;
+}
+
+/* 1. Hero Banner */
+.hero-banner-card {
+  display: flex;
+  background: linear-gradient(135deg, #1d4ed8 0%, #0f172a 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  color: #ffffff;
+  min-height: 250px;
+}
+
+.hero-content {
+  flex: 1.3;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-tagline {
+  color: #fbbf24;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.hero-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+}
+
+.hero-desc {
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  margin: 0 0 20px 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  background-color: #f59e0b;
+  color: #0f172a;
+  border: none;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: opacity 0.15s ease;
+}
+
+.btn-hero-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-hero-secondary {
+  background-color: #ffffff;
+  color: #0f172a;
+  border: none;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.15s ease;
+}
+
+.btn-hero-secondary:hover {
+  background-color: #f1f5f9;
+}
+
+.hero-media-wrapper {
+  flex: 0.9;
+  display: flex;
+  background-color: #0b1120;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+/* 2. Métricas rápidas */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.stat-icon {
+  font-size: 1.4rem;
+  background-color: #f1f5f9;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.stat-info {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stat-number {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* 3. Secciones generales */
+.section-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.link-see-more {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.link-see-more:hover {
+  text-decoration: underline;
+}
+
+/* Grid de Destacados */
+.grid-cards-four {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.game-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+}
+
+.card-thumb-container {
+  width: 100%;
+  height: 135px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.card-platform {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.card-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0 10px 0;
+}
+
+.card-price {
+  font-weight: 800;
+  color: #0f172a;
+  font-size: 0.92rem;
+}
+
+.card-rating {
+  font-size: 0.78rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.btn-card-details {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.15s ease;
+}
+
+.btn-card-details:hover {
+  background-color: #f8fafc;
+}
+
+/* 4. Grid de Recién agregados */
+.grid-recent-three {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.recent-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.recent-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+.recent-card-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: #f1f5f9;
+}
+
+.recent-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.recent-title {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.recent-subtitle {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.recent-price {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.recent-arrow {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+/* 5. Banner inferior */
+.community-banner {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 14px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.community-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.btn-community {
+  background: none;
+  border: none;
+  color: #fbbf24;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-community:hover {
+  text-decoration: underline;
+}
