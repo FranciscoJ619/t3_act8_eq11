@@ -1,16 +1,26 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Nombres:
+- Gómez Vasquez Fredy Azarel
+- Gonzalez Santiago Franscico Javier
 
-Currently, two official plugins are available:
+La API que eleguimos para la tabla de datos es la de DummyJSON productos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+- [https://dummyjson.com/products](https://dummyjson.com/products)
+
+
+- [Llamada a la API para iniciar sesión](src/assets/API_sesion.png) 
+- [Llamada a la API para la tabla](src/assets/API_tabla.png)
 
 ## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Imagenes de la ejecución del proyecto:
 
-## Expanding the ESLint configuration
+[login](src/assets/login.png).
+[pantalla de inicio](src/assets/inicio.png)
+[pantalla de productos](src/assets/productos.png)
+
+## Link del proyecto desplegado en el VPS
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
