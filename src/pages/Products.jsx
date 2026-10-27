@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import useProducts from '../hooks/useProducts';
 import ProductTable from '../components/ProductTable';
@@ -119,63 +118,77 @@ function Products() {
 
   return (
     <section className="products-page">
+      {/* Cabecera superior con título y botón principal */}
       <div className="products-heading">
         <div>
-          <h1>Productos</h1>
-          <p>Consulta y administra el catálogo de productos.</p>
+          <h1 className="heading-title">Productos</h1>
+          <p className="heading-subtitle">Consulta y administra el catálogo de productos.</p>
         </div>
 
-        <button type="button" onClick={() => abrirFormulario()}>
-          Agregar producto
+        <button 
+          type="button" 
+          className="btn-add-product"
+          onClick={() => abrirFormulario()}
+        >
+          <span>＋</span> Agregar producto
         </button>
       </div>
 
+      {/* Barra de búsqueda, filtro de categoría y límite por página */}
       <div className="products-filters">
-        <input
-          type="search"
-          placeholder="Buscar por nombre..."
-          value={busqueda}
-          onChange={(evento) => cambiarBusqueda(evento.target.value)}
-          aria-label="Buscar productos por nombre"
-        />
+        <div className="filters-left">
+          <input
+            type="search"
+            className="filter-input search-box"
+            placeholder="Buscar por nombre..."
+            value={busqueda}
+            onChange={(evento) => cambiarBusqueda(evento.target.value)}
+            aria-label="Buscar productos por nombre"
+          />
 
-        <select
-          value={categoria}
-          onChange={(evento) => cambiarCategoria(evento.target.value)}
-          aria-label="Filtrar por categoría"
-        >
-          <option value="">Todas las categorías</option>
-
-          {categorias.map((item) => (
-            <option key={item.slug ?? item} value={item.slug ?? item}>
-              {item.name ?? item}
-            </option>
-          ))}
-        </select>
-
-        <label>
-          Productos por página
           <select
-            value={limite}
-            onChange={(evento) => cambiarLimite(evento.target.value)}
+            className="filter-select"
+            value={categoria}
+            onChange={(evento) => cambiarCategoria(evento.target.value)}
+            aria-label="Filtrar por categoría"
           >
-            {[10, 20, 40, 50].map((cantidad) => (
-              <option key={cantidad} value={cantidad}>
-                {cantidad}
+            <option value="">Todas las categorías</option>
+            {categorias.map((item) => (
+              <option key={item.slug ?? item} value={item.slug ?? item}>
+                {item.name ?? item}
               </option>
             ))}
           </select>
-        </label>
+        </div>
+
+        <div className="filters-right">
+          <label className="filter-limit-label">
+            Productos por página
+            <select
+              className="filter-select select-limit"
+              value={limite}
+              onChange={(evento) => cambiarLimite(evento.target.value)}
+            >
+              {[10, 20, 40, 50].map((cantidad) => (
+                <option key={cantidad} value={cantidad}>
+                  {cantidad}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
       </div>
 
-      {mensaje && <p role="status">{mensaje}</p>}
-      {error && <p role="alert">Error de carga: {error}</p>}
-      {errorAccion && <p role="alert">{errorAccion}</p>}
+      {/* Alertas y avisos */}
+      {mensaje && <p className="alert-badge alert-success" role="status">{mensaje}</p>}
+      {error && <p className="alert-badge alert-danger" role="alert">Error de carga: {error}</p>}
+      {errorAccion && <p className="alert-badge alert-danger" role="alert">{errorAccion}</p>}
 
+      {/* Estado de carga o tabla */}
       {cargando ? (
-        <p>Cargando productos...</p>
+        <div className="loading-state">Cargando productos...</div>
       ) : error ? (
-        <button type="button" onClick={() => window.location.reload()}>
+        <button type="button" className="btn-retry" onClick={() => window.location.reload()}>
           Reintentar
         </button>
       ) : (
@@ -186,81 +199,99 @@ function Products() {
             onEliminar={manejarEliminar}
           />
 
+          {/* Barra inferior de paginación */}
           <div className="products-pagination">
-            <span>
-              {totalFiltrado} productos encontrados
+            <span className="pagination-info">
+              {totalFiltrado} registros encontrados
             </span>
 
-            <button
-              type="button"
-              disabled={pagina <= 1}
-              onClick={() => setPagina((actual) => actual - 1)}
-            >
-              Anterior
-            </button>
+            <div className="pagination-controls">
+              <button
+                type="button"
+                className="btn-page-nav"
+                disabled={pagina <= 1}
+                onClick={() => setPagina((actual) => actual - 1)}
+              >
+                Anterior
+              </button>
 
-            <span>
-              Página {pagina} de {totalPaginas}
-            </span>
+              <span className="pagination-current">
+                Página {pagina} de {totalPaginas}
+              </span>
 
-            <button
-              type="button"
-              disabled={pagina >= totalPaginas}
-              onClick={() => setPagina((actual) => actual + 1)}
-            >
-              Siguiente
-            </button>
+              <button
+                type="button"
+                className="btn-page-nav"
+                disabled={pagina >= totalPaginas}
+                onClick={() => setPagina((actual) => actual + 1)}
+              >
+                Siguiente
+              </button>
+            </div>
           </div>
         </>
       )}
 
+      {/* Modal / Overlay del formulario */}
       {mostrarFormulario && (
         <div className="product-form-overlay">
           <form className="product-form" onSubmit={guardarProducto}>
-            <h2>
+            <h2 className="form-title">
               {productoEnEdicion ? 'Editar producto' : 'Agregar producto'}
             </h2>
 
-            <label htmlFor="product-title">Nombre</label>
-            <input
-              id="product-title"
-              value={titulo}
-              onChange={(evento) => setTitulo(evento.target.value)}
-              required
-            />
+            <div className="form-field">
+              <label htmlFor="product-title">Nombre</label>
+              <input
+                id="product-title"
+                className="form-input"
+                placeholder="Nombre del producto"
+                value={titulo}
+                onChange={(evento) => setTitulo(evento.target.value)}
+                required
+              />
+            </div>
 
-            <label htmlFor="product-price">Precio</label>
-            <input
-              id="product-price"
-              type="number"
-              min="0.01"
-              step="0.01"
-              value={precio}
-              onChange={(evento) => setPrecio(evento.target.value)}
-              required
-            />
+            <div className="form-field">
+              <label htmlFor="product-price">Precio</label>
+              <input
+                id="product-price"
+                className="form-input"
+                type="number"
+                min="0.01"
+                step="0.01"
+                placeholder="0.00"
+                value={precio}
+                onChange={(evento) => setPrecio(evento.target.value)}
+                required
+              />
+            </div>
 
-            <label htmlFor="product-category">Categoría</label>
-            <select
-              id="product-category"
-              value={categoriaNueva}
-              onChange={(evento) => setCategoriaNueva(evento.target.value)}
-              required
-            >
-              {categorias.map((item) => (
-                <option key={item.slug ?? item} value={item.slug ?? item}>
-                  {item.name ?? item}
-                </option>
-              ))}
-            </select>
+            <div className="form-field">
+              <label htmlFor="product-category">Categoría</label>
+              <select
+                id="product-category"
+                className="form-select"
+                value={categoriaNueva}
+                onChange={(evento) => setCategoriaNueva(evento.target.value)}
+                required
+              >
+                {categorias.map((item) => (
+                  <option key={item.slug ?? item} value={item.slug ?? item}>
+                    {item.name ?? item}
+                  </option>
+                ))}
+              </select>
+            </div>
 
             <div className="product-form-actions">
-              <button type="submit" disabled={guardando}>
+              <button type="submit" className="btn-modal-save" disabled={guardando}>
                 {guardando ? 'Guardando...' : 'Guardar'}
               </button>
 
               <button
                 type="button"
+                className="btn-modal-cancel"
                 onClick={cerrarFormulario}
                 disabled={guardando}
               >

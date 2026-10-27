@@ -1,11 +1,10 @@
-
 function ProductTable({
   productos,
   onEditar,
   onEliminar,
 }) {
   if (productos.length === 0) {
-    return <p>No se encontraron productos.</p>;
+    return <p className="no-products-msg">No se encontraron productos.</p>;
   }
 
   return (
@@ -24,37 +23,43 @@ function ProductTable({
         <tbody>
           {productos.map((producto) => (
             <tr key={producto.id}>
-              <td>{producto.id}</td>
+              <td className="col-id">{producto.id}</td>
 
               <td>
                 <div className="product-name">
                   <img
                     src={producto.thumbnail}
-                    alt=""
-                    width="45"
-                    height="45"
+                    alt={producto.title}
+                    className="product-img"
                   />
-                  <span>{producto.title}</span>
+                  <span className="product-title-text">{producto.title}</span>
                 </div>
               </td>
 
-              <td>{producto.category}</td>
-              <td>${producto.price}</td>
+              <td>
+                <span className="category-badge">{producto.category}</span>
+              </td>
+              
+              <td className="col-price">${producto.price}</td>
 
               <td>
-                <button
-                  type="button"
-                  onClick={() => onEditar(producto)}
-                >
-                  Editar
-                </button>
+                <div className="table-actions">
+                  <button
+                    type="button"
+                    className="btn-edit"
+                    onClick={() => onEditar(producto)}
+                  >
+                    Editar
+                  </button>
 
-                <button
-                  type="button"
-                  onClick={() => onEliminar(producto)}
-                >
-                  Eliminar
-                </button>
+                  <button
+                    type="button"
+                    className="btn-delete"
+                    onClick={() => onEliminar(producto)}
+                  >
+                    Eliminar
+                  </button>
+                </div>
               </td>
             </tr>
           ))}
